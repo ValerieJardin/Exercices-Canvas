@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Maison canvas de l'exercice 1</title>
+  </head>
+  <body>
+<!--Déclaration de l'élément canvas-->
+    <canvas id="maison_canvas" width="300" height="300"></canvas>
+<!--Début du script :
+    getElementById() qui va permettre d'aller chercher et cibler l'élément <canvas> identifié par son attribut
+    id unique (ici maison_canvas),puis la méthode getContext() de l'élément ainsi récupéré pour savoir dans quel
+    contexte de dessin (2D ou 3D) le script va pouvoir agir, et de quelles fonctions il pourra disposer.
+    Le contexte sera l'élément central de gestion de Canvas.-->
+    <script>
+    var house = document.getElementById("maison_canvas");
+    var ctx = house.getContext("2d");
+//Début du chemin pour le toit
+    ctx.beginPath();
+//Coordonnées du point de départ du toit
+    ctx.moveTo(150,50);
+//Coordonnées des segments du toit
+    ctx.lineTo(100,150);
+    ctx.lineTo(200,150);
+    ctx.lineTo(150,50);
+//Annonce la fin du traçage du toit
+    ctx.closePath();
+//Propriété donnant la couleur de remplissage
+    ctx.fillStyle="#D38435";
+//Méthode pour remplir le dernier chemin tracé
+    ctx.fill();
+//Début du chemin pour le corps de la maison
+    ctx.beginPath();
+//Coordonnées du point de départ du corps de la maison
+    ctx.moveTo(100,150);
+//Coordonnées des segments du corps de la maison
+    ctx.lineTo(200,150);
+    ctx.lineTo(200,250);
+    ctx.lineTo(100,250);
+    ctx.lineTo(100,150);
+    ctx.closePath();
+    ctx.fillStyle="#A4D7E7";
+    ctx.fill();
+//Début du chemin pour la fenêtre gauche
+        ctx.beginPath();
+//Coordonnées du point de départ de la fenêtre gauche
+        ctx.moveTo(110,160);
+//Coordonnées des segments du corps de la fenêtre
+        ctx.lineTo(130,160);
+        ctx.lineTo(130,190);
+        ctx.lineTo(110,190);
+        ctx.lineTo(110,160);
+        ctx.closePath();
+        ctx.fillStyle="#C9C9C9";
+        ctx.fill();
+//Début du chemin pour la fenêtre droite
+        ctx.beginPath();
+//Coordonnées du point de départ de la fenêtre droite
+        ctx.moveTo(170,160);
+//Coordonnées des segments du corps de la fenêtre
+        ctx.lineTo(190,160);
+        ctx.lineTo(190,190);
+        ctx.lineTo(170,190);
+        ctx.lineTo(170,160);
+        ctx.closePath();
+        ctx.fillStyle="#C9C9C9";
+        ctx.fill();
+//Début du chemin pour la porte
+        ctx.beginPath();
+//Coordonnées du point de départ de la porte
+        ctx.moveTo(130,200);
+//Coordonnées des segments du corps de la porte
+        ctx.lineTo(170,200);
+        ctx.lineTo(170,250);
+        ctx.lineTo(130,250);
+        ctx.lineTo(130,200);
+        ctx.closePath();
+        ctx.fillStyle="#C9C9C9";
+        ctx.fill();
+    </script>
+  </body>
+</html>
