@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Voiture canvas exercice 3</title>
+  </head>
+  <body>
+    <a href="/home/valerie/Documents/canvas/exercice1">Exercice 1</a><br>
+    <a href="/home/valerie/Documents/canvas/exercice2">Exercice 2</a><br>
+    <!--Déclaration de l'élément canvas-->
+    <canvas id="voiture_canvas" width="1000" height="1000"></canvas>
+    <!--Début du script :
+    getElementById() qui va permettre d'aller chercher et cibler l'élément <canvas> identifié par son attribut
+    id unique (ici maison_canvas),puis la méthode getContext() de l'élément ainsi récupéré pour savoir dans quel
+    contexte de dessin (2D ou 3D) le script va pouvoir agir, et de quelles fonctions il pourra disposer.
+    Le contexte sera l'élément central de gestion de Canvas.-->
+<script>
+var car = document.getElementById("voiture_canvas");
+var ctx = car.getContext("2d");
+//Propriété qui donne l'épaisseur des contours
+ctx.lineWidth = 5;
+//Carrosserie:
+//Propriété de remplissage
+   ctx.fillStyle = "#00B353";
+//Haut de la carrosserie
+   ctx.fillRect(200,100,500,100);
+//Bas de la carrosserie
+  ctx.fillRect(100,200,700,100);
+//Les roues:
+//Début du traçage de la roue gauche
+  ctx.beginPath();
+  //Roue gauche
+  ctx.arc(200,320,45,0,Math.PI*2,true);
+//Propriété de traçage du contour
+  ctx.strokeStyle = "black";
+//Propriété de remplissage
+  ctx.fillStyle = "#CDCDCD";
+//Méthode pour remplir le dernier chemin tracer
+  ctx.fill();
+//Méthode pour tracer les contours
+  ctx.stroke();
+
+//Début du traçage de la roue droite
+  ctx.beginPath();
+  //Roue droite
+  ctx.arc(700,320,45,0,Math.PI*2,true);
+//Propriété de traçage du contour
+  ctx.strokeStyle = "black";
+//Propriété de remplissage
+  ctx.fillStyle = "#CDCDCD"
+//Méthode pour remplir le dernier chemin tracer
+    ctx.fill();
+//Méthode pour tracer les contours
+  ctx.stroke();
+
+</script>
+  </body>
+</html>
